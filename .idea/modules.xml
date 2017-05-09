@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-cache/spring-cache.iml" filepath="$PROJECT_DIR$/spring-cache/spring-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring4-datetime-jsr310/spring-datetime-jsr310.iml" filepath="$PROJECT_DIR$/spring4-datetime-jsr310/spring-datetime-jsr310.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-dynamic/spring-dynamic.iml" filepath="$PROJECT_DIR$/spring-dynamic/spring-dynamic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc-test/spring-mvc-test.iml" filepath="$PROJECT_DIR$/spring-mvc-test/spring-mvc-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-xmlhandlers/spring-xmlhandlers.iml" filepath="$PROJECT_DIR$/spring-xmlhandlers/spring-xmlhandlers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-xmlhandlersclient/spring-xmlhandlersclient.iml" filepath="$PROJECT_DIR$/spring-xmlhandlersclient/spring-xmlhandlersclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring4-annotation/spring4-annotation.iml" filepath="$PROJECT_DIR$/spring4-annotation/spring4-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring4-groovy/spring4-groovy.iml" filepath="$PROJECT_DIR$/spring4-groovy/spring4-groovy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring4-others/spring4-others.iml" filepath="$PROJECT_DIR$/spring4-others/spring4-others.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring4-showcase.iml" filepath="$PROJECT_DIR$/spring4-showcase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring4-validator/spring4-validator.iml" filepath="$PROJECT_DIR$/spring4-validator/spring4-validator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring4-xml/spring4-xml.iml" filepath="$PROJECT_DIR$/spring4-xml/spring4-xml.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,85 @@
+jetty-maven-plugin
+http://blog.sina.com.cn/s/blog_62b0363101012he0.html
+为了在Jetty里运行一个Web应用，你如果按照Maven默认的做法构造
+(resources文件存放 , ${basedir}/src/main/webapp下Classes文件存放在${project.build.outputDirectory}
+下，web.xml的配置描述${basedir}/src/main/webapp/WEB-INF/web.xml)
+，你不需要配置任何其它东西，
+只需输入：mvn jetty:run。
+这将在端口为8080的Jetty服务器上启动你的项目。
+Jetty将持续运行，直到插件是明确停止，
+例如，按下<ctrl-c>，
+您也可以使用mvn jetty:stop命令
+
+参考文档http://jinnianshilongnian.iteye.com/blog/2007180
+
+Configuring Jetty for project: spring-mvc-test
+[INFO] webAppSourceDirectory not set. Defaulting to D:\b\spring4-showcase\spring-mvc-test\src\main\webapp
+[INFO] Reload Mechanic: manual
+[INFO] Classes = D:\b\spring4-showcase\spring-mvc-test\target\classes
+[INFO] Context path = /springmvc
+[INFO] Tmp directory = D:\b\spring4-showcase\spring-mvc-test\target\tmp
+[INFO] Web defaults = org/eclipse/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = file:/D:/b/spring4-showcase/spring-mvc-test/src/main/webapp/WEB-INF/web.xml
+[INFO] Webapp directory = D:\b\spring4-showcase\spring-mvc-test\src\main\webapp
+ Started Jetty Server
+
+  jetty-maven-plugin 有两种方式设置服务端口（默认：8080）：
+
+     通过命令行，在启动jetty的时候设置：mvn jetty:run -Djetty.port=10001
+     在 pom 中的 jetty-maven-plugin 中进行设置：
+     [html] view plain copy
+     在CODE上查看代码片派生到我的代码片
+         <plugin>
+             <groupId>org.mortbay.jetty</groupId>
+             <artifactId>maven-jetty-plugin</artifactId>
+             <version>6.1.22</version>
+             <configuration>
+                 <connectors>
+                     <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                         <port>10001</port>
+                     </connector>
+                 </connectors>
+
+                 <stopKey>stop1</stopKey>
+                 <stopPort>5599</stopPort>
+                 <webAppConfig>
+                     <contextPath>/test1_srv</contextPath>
+                 </webAppConfig>
+                 <scanIntervalSeconds>5</scanIntervalSeconds>
+             </configuration>
+         </plugin>
+
+
+         mappingurl:
+
+信息: Mapped "{[/user/exception],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto
+ public java.lang.String com.sishuok.mvc.controller.UserController.exception()
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/user],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto
+ public java.lang.String com.sishuok.mvc.controller.UserController.create(com.sishuok.mvc.entity.User,org.springframework.validation.BindingResult,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/user/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.sishuok.mvc.controller.UserController.view(java.lang.Long,javax.servlet.http.HttpServletRequest)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/user],methods=[POST],params=[],headers=[],consumes=[application/xml],produces=[application/xml],custom=[]}" onto
+public com.sishuok.mvc.entity.User com.sishuok.mvc.controller.UserController.xml(com.sishuok.mvc.entity.User)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/user/{id}/icon],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.sishuok.mvc.controller.UserController.uploadIcon(java.lang.Long,org.springframework.web.multipart.MultipartFile,org.springframework.ui.Model) throws java.io.IOException
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/user/async1],methods=[],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public java.util.concurrent.Callable<com.sishuok.mvc.entity.User> com.sishuok.mvc.controller.UserController.async1(com.sishuok.mvc.entity.User)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/user/async2],methods=[],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.web.context.request.async.DeferredResult<com.sishuok.mvc.entity.User> com.sishuok.mvc.controller.UserController.async2(com.sishuok.mvc.entity.User)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/user],methods=[POST],params=[],headers=[],consumes=[application/json],produces=[application/json],custom=[]}" onto
+public com.sishuok.mvc.entity.User com.sishuok.mvc.controller.UserController.json(com.sishuok.mvc.entity.User)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/users/{id}],methods=[PUT],params=[],headers=[],consumes=[application/json],produces=[],custom=[]}" onto public void com.sishuok.mvc.controller.UserRestController.update(com.sishuok.mvc.entity.User)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/users],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<com.sishuok.mvc.entity.User> com.sishuok.mvc.controller.UserRestController.save(com.sishuok.mvc.entity.User,org.springframework.web.util.UriComponentsBuilder)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/users/{id}],methods=[DELETE],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.sishuok.mvc.controller.UserRestController.delete(java.lang.Long)
+四月 19, 2017 6:54:49 下午 org.springframework.web.servlet.handler.AbstractHandlerMethodMapping registerHandlerMethod
+信息: Mapped "{[/users/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public com.sishuok.mvc.entity.User com.sishuok.mvc.controller.UserRestController.findById(java.lang.Long)
+四月 19, 2017 6:54:52 下午 org.springframework.web.servlet.handler.AbstractUrlHandlerMapping registerHandler
+信息: Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+四月 19, 2017 6:54:52 下午 org.springframework.web.servlet.FrameworkServlet initServletBean

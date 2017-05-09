@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: javax.time:jsr-310-ri:20100212">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/javax/time/jsr-310-ri/20100212/jsr-310-ri-20100212.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/javax/time/jsr-310-ri/20100212/jsr-310-ri-20100212-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/javax/time/jsr-310-ri/20100212/jsr-310-ri-20100212-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
